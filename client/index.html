@@ -1,0 +1,33 @@
+<head>
+	
+</head>
+
+<body>
+	<header class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">
+					My Tasklist
+				</a>
+			</div>
+
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					{{> loginButtons align="right"}}
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<!-- Identify if the user is logged -->
+		{{#if currentUser}}
+			{{> new}}
+			{{> list}}
+		{{else}}
+			<!-- If itsn't logged, prints this message: -->
+			Log in to see your tasklist.
+		{{/if}}
+	</main>
+
+</body>
